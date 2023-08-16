@@ -176,22 +176,6 @@ require('lazy').setup({
   'vim-test/vim-test',
 }, {})
 
---  use {
---	  'VonHeikemen/lsp-zero.nvim',
---	  branch = 'v2.x',
---	  requires = {
---		  -- LSP Support
---		  {'neovim/nvim-lspconfig'},             -- Required
---		  {'williamboman/mason.nvim'},           -- Optional
---		  {'williamboman/mason-lspconfig.nvim'}, -- Optional
---
---		  -- Autocompletion
---		  {'hrsh7th/nvim-cmp'},     -- Required
---		  {'hrsh7th/cmp-nvim-lsp'}, -- Required
---		  {'L3MON4D3/LuaSnip'},     -- Required
---	  }
---  }
---end)
 
 vim.cmd.colorscheme "catppuccin"
 
@@ -261,7 +245,6 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Setting options ]]
---vim.opt.nu = true
 --vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
@@ -281,7 +264,7 @@ vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
 
--- vim.opt.updatetime = 50
+vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
@@ -316,8 +299,7 @@ vim.o.smartcase = true
 vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 100
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
