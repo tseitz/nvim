@@ -158,6 +158,14 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  {
+    "sourcegraph/sg.nvim",
+    -- dependencies = { "nvim-lua/plenary.nvim" },
+
+    -- If you have a recent version of lazy.nvim, you don't need to add this!
+    build = "nvim -l build/init.lua",
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
