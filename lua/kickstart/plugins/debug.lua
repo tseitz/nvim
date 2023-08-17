@@ -17,9 +17,11 @@ return {
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
+    -- 'nvim-telescope/telescope-dap.nvim',
 
     -- Add your own debuggers here
-    'leoluz/nvim-dap-go',
+    -- 'leoluz/nvim-dap-go',
+    'mfussenegger/nvim-dap-python',
   },
   config = function()
     local dap = require 'dap'
@@ -82,6 +84,9 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
-    require('dap-go').setup()
+    -- require('dap-go').setup()
+    require('dap-python').setup('/home/tseitz/code/cdr-poc/.venv/bin/python')
+    -- require('dap.ext.vscode').json_decode = require 'json5'.parse
+    require('dap.ext.vscode').load_launchjs()
   end,
 }

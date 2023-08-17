@@ -130,10 +130,6 @@ require('lazy').setup({
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons',
-      -- 'BurntSushi/ripgrep',
-      -- 'duane9/nvim-rg',
-      -- 'junegunn/fzf',
-      -- 'junegunn/fzf.vim',
       -- Fuzzy Finder Algorithm which requires local dependencies to be built.
       -- Only load if `make` is available. Make sure you have the system
       -- requirements installed.
