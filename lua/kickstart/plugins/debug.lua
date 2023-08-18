@@ -17,6 +17,7 @@ return {
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
+    'theHamsta/nvim-dap-virtual-text',
     -- 'nvim-telescope/telescope-dap.nvim',
 
     -- Add your own debuggers here
@@ -83,10 +84,11 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
+    require("nvim-dap-virtual-text").setup()
     -- Install golang specific config
     -- require('dap-go').setup()
     require('dap-python').setup()
-    require('dap-python').setup('/opt/homebrew/opt/python@3.10/libexec/bin/python3')
+    -- require('dap-python').setup('/opt/homebrew/opt/python@3.10/libexec/bin/python3')
     -- require('dap.ext.vscode').json_decode = require 'json5'.parse
     require('dap.ext.vscode').load_launchjs()
   end,
