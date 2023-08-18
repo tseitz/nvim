@@ -60,18 +60,18 @@ return {
       -- Set icons to characters that are more likely to work in every terminal.
       --    Feel free to remove or use ones that you like more! :)
       --    Don't feel like these are good choices.
-      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      icons = { expanded = '🔽', collapsed = '▶️', current_frame = '★' },
       controls = {
         icons = {
-          pause = '⏸',
-          play = '▶',
+          pause = '⏸️',
+          play = '▶️',
           step_into = '⏎',
-          step_over = '⏭',
-          step_out = '⏮',
-          step_back = 'b',
-          run_last = '▶▶',
-          terminate = '⏹',
-          disconnect = '⏏',
+          step_over = '⏭️',
+          step_out = '⏮️',
+          step_back = '🅱️',
+          run_last = '▶️▶️',
+          terminate = '⏹️',
+          disconnect = '⏏️',
         },
       },
     }
@@ -85,7 +85,8 @@ return {
 
     -- Install golang specific config
     -- require('dap-go').setup()
-    require('dap-python').setup('/home/tseitz/code/cdr-poc/.venv/bin/python')
+    require('dap-python').setup()
+    require('dap-python').setup('/opt/homebrew/opt/python@3.10/libexec/bin/python3')
     -- require('dap.ext.vscode').json_decode = require 'json5'.parse
     require('dap.ext.vscode').load_launchjs()
   end,
