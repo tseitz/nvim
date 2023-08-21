@@ -87,8 +87,18 @@ return {
     require("nvim-dap-virtual-text").setup()
     -- Install golang specific config
     -- require('dap-go').setup()
-    require('dap-python').setup()
-    -- require('dap-python').setup('/opt/homebrew/opt/python@3.10/libexec/bin/python3')
+    -- require('dap-python').setup('/home/tseitz/code/cdr-poc/.venv/bin/python')
+    local function resolve_python_path()
+      local cwd = vim.fn.getcwd()
+      local venv_python = cwd .. '/.venv/bin/python'
+
+      if vim.fn.executable(venv_python) == 1 then
+        return venv_python
+      else
+        return 'python3'
+      end
+    end
+    require('dap-python').setup(resolve_python_path())
     -- require('dap.ext.vscode').json_decode = require 'json5'.parse
     require('dap.ext.vscode').load_launchjs()
   end,
