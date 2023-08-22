@@ -156,10 +156,7 @@ require('lazy').setup({
 
   {
     "sourcegraph/sg.nvim",
-    -- dependencies = { "nvim-lua/plenary.nvim" },
-
-    -- If you have a recent version of lazy.nvim, you don't need to add this!
-    build = "nvim -l build/init.lua",
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
